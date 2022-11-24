@@ -25,7 +25,6 @@ class Patient:
     def __init__(self, name: str, symptoms: list):
         self.name = name
         self.symptoms = symptoms
-
 #
 # 1.2)
 # Create a method called "add_test"
@@ -34,7 +33,6 @@ class Patient:
 # 2. the results of the test (bool)
 #
 # This information should be stored somehow.
-
 
 class Patient:
 
@@ -66,8 +64,6 @@ class Patient:
 #    following symptoms:
 #    ['fever', 'cough', 'anosmia']
 
-
-
 class Patient:
 
     def __init__(self, name: str, symptoms: list):
@@ -95,7 +91,6 @@ class Patient:
                     prob += 0.1
             return round(prob, 2)
 
-
 # p1 = Patient('Ken', ['fever', 'anosmia', 'headache', 'fever'])
 # p2 = Patient('Lisa', ['sore throat', ])
 # p1.add_test('covid', True)
@@ -105,7 +100,7 @@ class Patient:
 ######################
 
 # 2. In this exercise you will make an English Deck class made of Card classes
-# 
+#
 # the Card class should represent each of the cards
 #
 # the Deck class should represent the collection of cards and actions on them
@@ -122,7 +117,7 @@ class Card:
 
 # 2.2) Create a Deck class called "Deck".
 # The constructor will create an English Deck (suits: Hearts, Diamonds, Clubs, Spades and values: A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K). It will create a list of cards that contain each of the existing cards in an English Deck.
-# Create a method called "shuffle" that shuffles the cards randomly. 
+# Create a method called "shuffle" that shuffles the cards randomly.
 # Create a method called "draw" that will draw a single card and print the suit and value. When a card is drawn, the card should be removed from the deck.
 
 class Deck(Card):
@@ -130,7 +125,7 @@ class Deck(Card):
         suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
         values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
         suit_value_pair = list(product(suits, values))
-        self.english = [Card(s_v[0], s_v[1]) for s_v in suit_value_pair] 
+        self.english = [Card(s_v[0], s_v[1]) for s_v in suit_value_pair]
 
     def shuffle(self):
         shuffled_deck = random.shuffle(self.english)
@@ -151,8 +146,8 @@ class Deck(Card):
 # print(len(english_deck.english))
 
 
-# 3. In this exercise you will create an interface that will serve as template 
-# for different figures to compute their perimeter and surface. 
+# 3. In this exercise you will create an interface that will serve as template
+# for different figures to compute their perimeter and surface.
 
 # 3.1Create an abstract class (interface) called "PlaneFigure" with two abstract methods:
 # compute_perimeter() that will implement the formula to compute the perimiter of the plane figure.
@@ -163,15 +158,14 @@ class PlaneFigure(metaclass=ABCMeta):
 
     def __init__(self):
         pass
-    
+
     @abstractmethod
     def compute_perimeter(self):
-        return NotImplementedError   
-         
+        return NotImplementedError
+
     @abstractmethod
     def compute_surface(self):
         return NotImplementedError
-    
 
 # 3.2 Create a child class called "Triangle" that inherits from "PlaneFigure" and has as parameters in the constructor "base", "c1", "c2", "h". ("base" being the base, "c1" and "c2" the other two sides of the triangle and "h" the height). Implement the abstract methods with the formula of the triangle.
 
@@ -196,7 +190,6 @@ class Triangle(PlaneFigure):
             return surface
         except TypeError:
             raise Exception('Please make sure Trinagle object parameters are float objects!!')
-
 
 # triangle = Triangle(10, 4, 4, 6)
 # print('Perimeter:', triangle.compute_perimeter())
@@ -229,7 +222,6 @@ class Rectangle(PlaneFigure):
 # print('Surface:', rectangle.compute_surface())
 
 # 3.3 Create a child class called "Circle" that inherits from "PlaneFigure" and has as parameters in the constructor "radius" (radius of the circle). Implement the abstract methods with the formula of the circle.
-
 
 class Circle(PlaneFigure):
 
