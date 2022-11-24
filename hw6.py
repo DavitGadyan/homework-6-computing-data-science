@@ -92,7 +92,7 @@ class Patient:
             return round(prob, 2)
 
 # p1 = Patient('Ken', ['fever', 'anosmia', 'headache', 'fever'])
-# p2 = Patient('Lisa', ['sore throat', ])
+# p2 = Patient('Lisa', ['sore throat', 'insomnia'])
 # p1.add_test('covid', True)
 # # p1.add_test('covid', False)
 # print(p1.has_covid())
